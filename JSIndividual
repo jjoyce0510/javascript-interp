@@ -1,0 +1,29 @@
+John Joyce
+Fundamentals of Computing II
+Final Project Individual Report
+April 26, 2016
+
+Time Log Total: Approx. 39 hr
+
+Disclaimer: In writing this individual report, I used the 'final project' document as a reference
+
+My Contributions:
+
+My contributions to the project occurred at each step of the project's development. First, they included researching the inner workings of an interpreter, tasked with learning about the wholistic structure of an interpreter in order to begin to break our project down into discrete parts. From this, I learned of the lexical analysis/tokenizing, AST building/parsing, and interpretting stages. I realized that these portions would each have to be handled separately. Thus once we had a plan of attack, my contributions began to take a concrete form. Next, I worked on closely on the Token class and the environment, or env, class. I wrote the basic structure of the Token parent class as well as its subclasses, which were later refined collectively. Additionally, I set up the skeleton of the env class, defining public variables that would be needed later on in the process. After this, my focus was redirected to actual 'separateIntoTokens' function, which tokenizes a string of text. I worked specifically on finding ways to accurately break the text into different tokens based on regular expressions that determined the expected type of the token. Using token pointers to keep track of the current and previous token, I was able to use token type, as well as whitespace, as effective token delimiters (allowing a=1 and a = 1). After getting the tokenzing process ironed out, able to accurately break lines into a vector of token pointers, I moved on to the parsing phase, working most closely with the 'parse' function. This function is where I spent the most of my time. I worked to create abstract syntax trees based on a vector of token pointers. First, I worked on building trees for basic arithmetic, addition and subtraction. Next, I worked on building trees involing precedence arithmetic (*, /, & %). Finally, I worked on building trees that adhered to parenthetic scope. This was potentially the most complex portion of the code. It uses a stack to keep track of opening separators and builds a tree suitable for executing the operations within the separators prior to those outside of it. After scope, I worked on variable trees, logical expression trees, and finally loop trees. Loop trees include if-else, while, and for trees, which are each relatively similar in build, except for the fact that they each require a different number of children nodes. After finishing my work on the 'parse' function, I began to shift gears toward the 'interp' function, which interprets the trees that have been built in the previous step. Specifically, I worked on interpretting expressions involving variables. 
+
+
+Team Evaluation:
+
+Pierce and Zach were both very helpful on the project. 
+
+Pierce worked very hard to research the idea and convince us that it was actually feasible. He had previously built a Lisp interpreter in Python, so he had a general understanding of the bacmbone of an interpreter. This was extremely helpful, as he was able to guide us well through the different stages of the project. Additionally, he worked hard on revising the Token class and subclasses, building the ASTNode class, revising the environment class, and the skeleton of the parse function. Overall, he worked well with Zach and I, being crucial to the process in its entirety. 
+
+Zach was also crucial to our success. He spent a lot of time on building the type checking functions, which used regular expressions to assign a type to a token (Float, variable, etc). After this, he worked diligently on the REPL and its performance. Additionally, he worked closely with me on the tokenizing process, working extensively on the 'separateIntoTokens' function with me. Zach also helped with the basics of building the AST, when we were first setting up the process. Finally, Zach has spearheaded the execution/interpretation portion of the project. He has written most of the 'interp' function with the help of Pierce. Overall, he has been working very hard to make sure this comes together. 
+
+As I've noted previously, our team worked very well together. We split tasks well and had solid execution. We were able to work through any major problems that we encountered. 
+
+
+Final Remarks: 
+
+This project was very interesting. Personally, I learned so much about how complex the process of interpretting a programming language truly is. Moreover, I am very grateful I had the chance to dive into the specifics of how this actually works. Had I not used this project to motivate me to learn about it, I'm unsure of when else I would have! All in all, I think it turned out very well. I am excited to see where we take it from here!
+

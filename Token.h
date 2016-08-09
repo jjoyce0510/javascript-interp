@@ -64,7 +64,6 @@ public:
     }
 
 
-
     string value;
     string type;
     int line, startingPos, endingPos, precedence;
